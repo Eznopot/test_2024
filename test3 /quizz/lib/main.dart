@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:quizz/constant/list_question.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,14 +16,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: QuizScreen(),
+      home: const QuizScreen(),
     );
   }
 }
 
 class QuizScreen extends StatefulWidget {
+  const QuizScreen({super.key});
+
   @override
-  _QuizScreenState createState() => _QuizScreenState();
+  State<QuizScreen> createState() => _QuizScreenState();
 }
 
 class _QuizScreenState extends State<QuizScreen> {

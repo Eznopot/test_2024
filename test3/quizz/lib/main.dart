@@ -34,12 +34,12 @@ class _QuizScreenState extends State<QuizScreen> {
 
   void selectAnswer(int selectedIndex) {
     if (selectedIndex == questions[currentQuestionIndex].correctIndex) {
-      // Augmenter le score
+      ...
     }
     setState(() {
       currentQuestionIndex++;
       if (currentQuestionIndex >= questions.length) {
-        // Appel a la fonction qui affiche la pop Up
+        ...
       }
     });
   }
@@ -49,17 +49,17 @@ class _QuizScreenState extends State<QuizScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: ...,
-          content: ...,
-          actions: ...
+            // title: ...,
+            // content: ...,
+            // actions: ...
+            );
       },
     );
   }
 
   void _resetQuiz() {
     setState(() {
-      // mettre index de la question à 0
-      // mettre score = 0 
+      ...
       questions.shuffle(Random());
     });
   }
@@ -69,43 +69,40 @@ class _QuizScreenState extends State<QuizScreen> {
     if (currentQuestionIndex >= questions.length) {
       return Scaffold(
         appBar: AppBar(
-          title: Text('Bonjour Epseed'),
+          title: const Text('Recommencer le quizz ?'),
         ),
         body: Center(
-          child: Text('Fin du quiz! Votre score est: $score'),
+          child: OutlinedButton(
+            onPressed: _resetQuiz,
+            child: const Text('Recommencer le quizz'),
+          ),
         ),
       );
     } else {
       return Scaffold(
-        ...
-        ...
-        ...,
-              // const SizedBox(
-              //   height: 20,
-              // ),
-              // for (var entry in questions[currentQuestionIndex].answers.asMap().entries)
-              //   InkWell(
-              //     onTap: () => selectAnswer(entry.key),
-              //     child: Card(
-              //       child: Padding(
-              //         padding: const EdgeInsets.all(16.0),
-              //         child: Text(entry.value),
-              //       ),
-              //     ),
-              //   ),
-              // const SizedBox(height: 20),
-
-
-
-              //  pour pouvoir reset le quizz quand on veut :
-               
-              // OutlinedButton(
-              //   onPressed: _resetQuiz,
-              //   child: Text('Recommencer le quiz'),
-              // ),
-            // ],
-          // ),
-        // ),
+        body: Column(
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+            for (var entry
+                in questions[currentQuestionIndex].answers.asMap().entries)
+              InkWell(
+                onTap: () => selectAnswer(entry.key),
+                child: Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(entry.value),
+                  ),
+                ),
+              ),
+            const SizedBox(height: 20),
+            OutlinedButton(
+              onPressed: _resetQuiz,
+              child: const Text('Recommencer le quizz'),
+            ),
+          ],
+        ),
       );
     }
   }

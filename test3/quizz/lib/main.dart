@@ -73,7 +73,7 @@ class _QuizScreenState extends State<QuizScreen> {
         ),
         body: Center(
           child: OutlinedButton(
-            onPressed: _resetQuiz,
+            onPressed: ...,
             child: const Text('Recommencer le quizz'),
           ),
         ),
@@ -88,7 +88,7 @@ class _QuizScreenState extends State<QuizScreen> {
             for (var entry
                 in questions[currentQuestionIndex].answers.asMap().entries)
               InkWell(
-                onTap: () => selectAnswer(entry.key),
+                onTap: () {...},
                 child: Card(
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
@@ -98,7 +98,7 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
             const SizedBox(height: 20),
             OutlinedButton(
-              onPressed: _resetQuiz,
+              onPressed: ...,
               child: const Text('Recommencer le quizz'),
             ),
           ],

@@ -49,19 +49,19 @@ import (
 	"your_project/src/entity"
 )
 
-func UpdateUser() error {
+func UpdateUserService() error {
 	// Implémentation de la mise à jour de l'utilisateur
 	// Par exemple, mise à jour dans la base de données
 	return nil
 }
 
-func DeleteUser() error {
+func DeleteUserService() error {
 	// Implémentation de la suppression de l'utilisateur
 	// Par exemple, suppression dans la base de données
 	return nil
 }
 
-func GetUser() (entity.User, error) {
+func GetUserService() (entity.User, error) {
 	// Implémentation de la récupération de l'utilisateur
 	// Par exemple, récupération dans la base de données
 	user := entity.User{
@@ -72,7 +72,7 @@ func GetUser() (entity.User, error) {
 	return user, nil
 }
 
-func CreateUser() error {
+func CreateUserService() error {
 	// Implémentation de la création de l'utilisateur
 	// Par exemple, création dans la base de données
 	return nil

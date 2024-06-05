@@ -148,6 +148,27 @@ func SetupRoutes(router *gin.Engine) {
 }
 ```
 
+
+#### Utilisation de Gorm en lien avec la base de donnée
+Lorsque nécessaire, l'utilisation de gorm peut se faire de cette manière:
+
+```go
+
+func ExampleHandlingDatabase(tofind string) (Model, error) {
+	var ModelExample entity.Model
+
+	// Utilisation du singleton de la base de donnée 
+	db := database.ReturnDb(nil)
+
+	// Query effectué a l'aide de Gorm de cette manière
+	err := db.Where("element = ? ", tofind).First(&ModelExample).Error
+	if err != nil {
+		return _, err
+	}
+
+	return ModelExample, nil
+}
+```
 ## Critères d'évaluation
 
 1. **Respect de l'architecture Modèle-Contrôleur-Service.**

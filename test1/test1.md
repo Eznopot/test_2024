@@ -2,15 +2,14 @@ Objectif :
  
 Le but de cet exercice est d'implémenter une fonction en Go qui trouve récursivement des fichiers dans un répertoire donné, les traite pour calculer leur checksum, et retourne des informations pertinentes sur les fichiers.
  
-Cette fonction sera utile pour synchroniser les fichiers avec un serveur en identifiant quels fichiers doivent être téléchargés ou téléversés en fonction de leur date de dernière modification.
+Cette fonction sera utile dans le cadre d'Epseed pour synchroniser les fichiers avec un serveur en identifiant quels fichiers doivent être téléchargés ou téléversés en fonction de leur date de dernière modification.
  
 Exigences :
 - Fonctionnalité :
   Implémenter une fonction `FolderFilesFinder` qui :
   - Prend un chemin de répertoire et trouve récursivement tous les fichiers qu'il contient.
-  - Compare les dates de dernière modification des fichiers avec un seuil configurable.
   - Retourne une liste de fichiers qui doivent être synchronisés, incluant leur chemin, checksum, et date de dernière modification.
-  Implémenter une fonction auxiliaire `processFile` pour gérer les fichiers individuels et les sous-répertoires.
+  - Faire une gestion d'erreur solide
  
 - Entrées :
   `folderpath` (string) : Le chemin du répertoire pour démarrer la recherche.
@@ -24,7 +23,6 @@ Exigences :
  
 Bonus :
   - Gérer l'ignorance des fichiers basée sur des motifs.
-  - Implémenter la gestion des erreurs pour les différentes étapes du traitement des fichiers.
   - Concurrence :
     Utiliser des goroutines pour traiter les fichiers en parallèle afin d'accélérer l'opération.
     Utiliser des canaux(chan) pour collecter les résultats des goroutines.
@@ -110,28 +108,6 @@ Fonction de Go qui pourrais vous etre utile:
 ```go
 func append(slice []Type, elems ...Type) []Type
 ```
- 
-Lignes directrices :
-- Initialiser le processus :
-  - Lire le contenu du répertoire spécifié par `folderpath`.
-  - Vérifier la date de dernière modification par rapport au seuil configuré.
-  - Traiter chaque fichier.
- 
-- Gestion récursive des répertoires :
-  - Si un répertoire est rencontré, appeler récursivement `FolderFilesFinder` sur le sous-répertoire.
- 
-- Calcul du checksum :
-  -  la fonction auxiliaire `GetChecksum` pour calculer le checksum des fichiers.
- 
-- Collecter les résultats :
-  - Obtenir les résultats de chaque paquet de fichiers et retourner une liste de ceux-ci.
- 
-- Bonus :
-  - Traiter les fichiers de manière concurrente :
-    - Pour chaque fichier qui passe le filtrage initial, démarrer une goroutine pour traiter le fichier.
-    - Utiliser un canal(chan) pour collecter les résultats de chaque goroutine.
-  - Ignorer les motifs :
-    - Faire un fichier `.ignore` où chaque pattern trouvé dans un nom de fichier doit être ignoré et non mis dans la liste finale.
  
 Exemple d'utilisation :
 ```go

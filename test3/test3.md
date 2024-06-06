@@ -2,46 +2,46 @@
 <a name="readme-top"></a>
  
 <div align="center">
-  <img src="logo.jpeg" alt="logo" width="600"  height="auto" />
+  <img src="logo.jpeg" alt="logo" width="600" height="auto" />
   <br/>
   <h3><b>🚀 Test Technique Epseed 2024 🚀</b></h3>
 </div>
  
 # 📖 Consigne
  
-Création d'une page web de Quizz :
+Création d'une page web de quiz :
 Vous allez créer une petite application de quiz qui pose des questions aux utilisateurs et affiche leur score à la fin.
  
 <ol>
-    <li><b>Ecran du quizz</b></li>
+    <li><b>Écran du quiz</b></li>
         <ul>
-            <li>Afficher les questions en Card de maniere à ce qu'elles soient responsive.</li>
-            <li>Permettre a l'utilisateur de séléctionner la carte.</li>
+            <li>Afficher les questions en Card de manière à ce qu'elles soient responsives.</li>
+            <li>Permettre à l'utilisateur de sélectionner la carte.</li>
             <li>Ajouter un point de score pour valider la réponse et passer à la question suivante.</li>
         </ul>
     <li><b>Affichage du score</b></li>
         <ul>
-            <li>A la fin du quizz, afficher le score de l'utilisateur sous forme de popUp</li>
+            <li>À la fin du quiz, afficher le score de l'utilisateur sous forme de pop-up.</li>
         </ul>
-    <li><b>Réinitialisation du <b>SUPER</b> quizz</b></li>
+    <li><b>Réinitialisation du <b>SUPER</b> quiz</b></li>
         <ul>
-            <li>Ajouter un bouton sur la popUp qui réinitialise le quizz <b>ET</b> le recommence depuis le début avec un ordre aléatoire pour les quéstions.</li>
+            <li>Ajouter un bouton sur la pop-up qui réinitialise le quiz <b>ET</b> le recommence depuis le début avec un ordre aléatoire pour les questions.</li>
         </ul>
 </ol>
  
 ## 🚀 Résultat
  
-Ne vous focalisez pas sur cette maquette, l'important est que le quizz soit fonctionel :)
+Ne vous focalisez pas sur cette maquette, l'important est que le quiz soit fonctionnel :)
 </br>
 Bonne chance !!
  
-<img src="example.png" alt="example" width="1000"  height="auto" />
+<img src="example.png" alt="example" width="1000" height="auto" />
  
 ### 💻 Accompagnement
  
 Dans le fichier main.dart :
  
-```sh
+```dart
 import 'dart:math';
 import 'package:flutter/material.dart';
  
@@ -70,16 +70,16 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
   final List<Question> questions = [
     Question(
-      text: "A quoi sert la solution Epseed ?",
+      text: "À quoi sert la solution Epseed ?",
       answers: [
         "Sécuriser les ordinateurs n'importe où",
-        "Sécuriser les téléphones au travails",
+        "Sécuriser les téléphones au travail",
         "Sécuriser les ordinateurs au travail"
       ],
       correctIndex: 0,
     ),
     Question(
-        text:"Qui n'est pas partenaire d'Epseed ?",
+        text: "Qui n'est pas partenaire d'Epseed ?",
         answers: [
             "BPI France",
             "Horsinergia",
@@ -90,7 +90,7 @@ class _QuizScreenState extends State<QuizScreen> {
         correctIndex: 4,
     ),
     Question(
-        text:"Une seed c'est quoi ?",
+        text: "Une seed c'est quoi ?",
         answers: [
             "Un triangle",
             "Un petit appareil conçu pour les entreprises, en particulier les petites et moyennes entreprises, où les employés utilisent leurs propres ordinateurs personnels pour travailler. Il permet aux utilisateurs d'accéder en toute sécurité à leur environnement de travail et à leurs fichiers depuis n'importe quel ordinateur en le branchant simplement via USB.",
@@ -106,13 +106,6 @@ class _QuizScreenState extends State<QuizScreen> {
             "Non"
         ],
         correctIndex: 0,
-    ),
-    Question(
-        text: "",
-        answers: [
-            ""
-        ],
-        correctIndex:
     )
   ];
  
@@ -173,6 +166,7 @@ class Question {
  
     Question({required this.text, required this.answers, required this.correctIndex});
 }
+
  
  
 ```

@@ -10,6 +10,7 @@ Un docker-compose est fournis pour lancer la base de donnée MariaDB. Vous etes 
 - [Go](https://golang.org/dl/) 1.16+
 - [Gin](https://gin-gonic.com/)
 - [Gorm](https://gorm.io/docs/)
+- Créer une base de donnée MariaDB avec le nom *backend_db*
 
 ## Structure du Projet
 

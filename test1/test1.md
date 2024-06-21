@@ -1,6 +1,6 @@
 Objectif :
  
-Le but de cet exercice est d'implémenter une fonction en Go qui trouve récursivement des fichiers dans un répertoire donné, les traite pour calculer leur checksum, et retourne des informations pertinentes sur les fichiers.
+Le but de cet exercice est d'implémenter une fonction en Go qui trouve récursivement des fichiers dans un répertoire donné, les traites pour calculer leur checksum, et retourne des informations pertinentes sur les fichiers.
  
 Cette fonction sera utile dans le cadre d'Epseed pour synchroniser les fichiers avec un serveur en identifiant quels fichiers doivent être téléchargés ou téléversés en fonction de leur date de dernière modification.
  

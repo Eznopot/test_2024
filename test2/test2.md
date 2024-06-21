@@ -1,7 +1,9 @@
 # Test Technique 
 ## Objectif
 
-L'objectif de ce test technique est d'implémenter des routes API pour gérer des utilisateurs en utilisant le framework Gin. Vous allez créer les routes nécessaires, ainsi que les services et contrôleurs correspondants.
+L'objectif de ce test technique est d'implémenter des routes API pour gérer des utilisateurs en utilisant le framework Gin et l'ORM Gorm. Vous allez créer les routes nécessaires, ainsi que les services et contrôleurs correspondants afin de pouvoir créer, supprimer, modifier et récuperer un User.
+La base du code est déja faite mais vous pouvez la modifier comme bon vous semble.
+Un docker-compose est fournis pour lancer la base de donnée MariaDB. Vous etes libre de l'utiliser comme bon vous semble. La structure de la base de donnée ne sera pas évaluer sauf en cas de fonctionalités bonus réalisé.
 
 ## Prérequis
 
@@ -39,7 +41,7 @@ Le projet est organisé de la manière suivante :
 
 #### src/users/service.go
 
-Implémentez la logique métier pour chaque opération utilisateur dans le service :
+Les fonction a modifier sont les suivantes:
 
 ```go
 package users
@@ -64,11 +66,6 @@ func DeleteUserService() error {
 func GetUserService() (entity.User, error) {
 	// Implémentation de la récupération de l'utilisateur
 	// Par exemple, récupération dans la base de données
-	user := entity.User{
-		ID:    1,
-		Name:  "John Doe",
-		Email: "john.doe@example.com",
-	}
 	return user, nil
 }
 
@@ -81,7 +78,7 @@ func CreateUserService() error {
 
 #### src/users/controller.go
 
-Implémentez les handlers pour chaque route dans le contrôleur :
+Le fichier controller.go contient les fonctions "controller" des fonctions que vous devez implémenter. Vous devrez surement les modifier afin de faire passer les arguments au bons endroit.
 
 ```go
 package users
@@ -127,7 +124,7 @@ func CreateUser(c *gin.Context) {
 
 #### routes/routes.go
 
-Configurez les routes pour chaque opération utilisateur :
+Le fichier routes.go contient les routes qui sont exposé par l'API. SI vous souhaitez rajouter des routes c'est par ce fichier qu'il faut les ajouter.
 
 ```go
 package routes

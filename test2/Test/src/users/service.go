@@ -2,21 +2,20 @@ package users
 
 import "Technical/src/entity"
 
-func UpdateUserService() error {
+func UpdateUserService( /*argument*/ ) error {
 	// Implémentation de la mise à jour de l'utilisateur
 	// Par exemple, mise à jour dans la base de données
 	return nil
 }
 
-func DeleteUserService() error {
+func DeleteUserService( /*argument*/ ) error {
 	// Implémentation de la suppression de l'utilisateur
 	// Par exemple, suppression dans la base de données
 	return nil
 }
 
-func GetUserService() (entity.User, error) {
+func GetUserService( /*argument*/ ) (entity.User, error) {
 	// Implémentation de la récupération de l'utilisateur
-	// Par exemple, récupération dans la base de données
 	user := entity.User{
 		ID:        1,
 		Firstname: "John",
@@ -26,7 +25,7 @@ func GetUserService() (entity.User, error) {
 	return user, nil
 }
 
-func CreateUserService() error {
+func CreateUserService( /*argument*/ ) error {
 	// Implémentation de la création de l'utilisateur
 	// Par exemple, création dans la base de données
 	return nil

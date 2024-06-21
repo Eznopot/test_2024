@@ -1,9 +1,8 @@
 # Test Technique 
 ## Objectif
 
-L'objectif de ce test technique est d'implémenter des routes API pour gérer des utilisateurs en utilisant le framework Gin et l'ORM Gorm. Vous allez créer les routes nécessaires, ainsi que les services et contrôleurs correspondants afin de pouvoir créer, supprimer, modifier et récuperer un User.
-La base du code est déja faite mais vous pouvez la modifier comme bon vous semble.
-Un docker-compose est fournis pour lancer la base de donnée MariaDB. Vous etes libre de l'utiliser comme bon vous semble. La structure de la base de donnée ne sera pas évaluer sauf en cas de fonctionalités bonus réalisé.
+L'objectif de ce test technique est de modifier des routes API pour gérer des utilisateurs avec le framework Gin et l'ORM Gorm. Vous devrez modifier les routes nécessaires ainsi que les services et contrôleurs pour créer, supprimer, modifier et récupérer un utilisateur.
+La base du code est déjà fournie, mais vous pouvez la modifier selon vos besoins, l'essentiel, c'est que ça marche. Un fichier docker-compose est fourni pour lancer la base de données MariaDB, que vous êtes libre d'utiliser. La structure de la base de données ne sera évaluée que si vous implémentez des fonctionnalités bonus.
 
 ## Prérequis
 
@@ -90,7 +89,7 @@ import (
 )
 
 func UpdateUser(c *gin.Context) {
-	if err := UpdateUser(); err != nil {
+	if err := UpdateUserService(); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
@@ -98,7 +97,7 @@ func UpdateUser(c *gin.Context) {
 }
 
 func DeleteUser(c *gin.Context) {
-	if err := DeleteUser(); err != nil {
+	if err := DeleteUserService(); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
@@ -106,7 +105,7 @@ func DeleteUser(c *gin.Context) {
 }
 
 func GetUser(c *gin.Context) {
-	user, err := GetUser()
+	user, err := GetUserService()
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
@@ -115,7 +114,7 @@ func GetUser(c *gin.Context) {
 }
 
 func CreateUser(c *gin.Context) {
-	if err := CreateUser(); err != nil {
+	if err := CreateUserService(); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}

@@ -11,6 +11,7 @@ Le test technique se déroulera en 4 partie:
 
 L'objectif grâce a ces petits exercices est de pouvoir estimer vos compétences techniques et votre niveau de maitrise des differents outils.
 Il se peux que vous ne connaissait pas les langages à utiliser. Si c'est le cas, pas de panique, vous avez le droit d'utiliser Internet pour vous aider.
+Ces tests ont été spécialement rédigés par vos prédécesseurs. N'hésitez pas à leur faire savoir si vous les avez appréciés ou non.
 
 ## rendu
 
